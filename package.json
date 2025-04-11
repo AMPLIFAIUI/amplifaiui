@@ -1,0 +1,19 @@
+{
+  "name": "amplifaiui",
+  "version": "1.0.0",
+  "description": "AMPLIFAI UI Application",
+  "scripts": {
+    "start": "node src/ui-customization.js",
+    "dev": "nodemon src/ui-customization.js",
+    "test": "python amp_core.py",
+    "build-css": "node-sass src/ui-customization.css -o dist/css",
+    "watch-css": "nodemon -e css -x \"npm run build-css\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "node-sass": "^9.0.0"
+  }
+}

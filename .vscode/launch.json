@@ -1,22 +1,32 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "command": "npm start",
-            "name": "Run npm start",
-            "request": "launch",
-            "type": "node-terminal"
-        },
-
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug UI Server",
+      "program": "${workspaceFolder}/src/ui-customization.js",
+      "outFiles": ["${workspaceFolder}/**/*.js"]
+    },
+    {
+      "type": "python",
+      "request": "launch",
+      "name": "Debug AMP Core",
+      "program": "${workspaceFolder}/amp_core.py",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Frontend",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Debug",
+      "configurations": ["Debug UI Server", "Debug AMP Core", "Debug Frontend"]
+    }
+  ]
 }
