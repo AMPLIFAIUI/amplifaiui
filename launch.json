@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Launch AMP",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/core/alpha_engine.py",
+        "args": ["--godmode", "--revenue-target=500"]
+      }
+    ]
+  }
